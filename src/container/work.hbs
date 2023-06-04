@@ -1,0 +1,165 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+  {{!-- <header>
+    <div>
+      <h1>{{name.firstname}} {{name.lastname}}</h1>
+    </div>
+    <div>
+      <b>{{position}}</b>
+    </div>
+    <br>
+    <div>
+      <em>{{salary}}</em>
+    </div>
+    <br>
+    <hr>
+  </header> --}}
+
+  {{!-- <nav>
+    <a href="/skills">Skills</a>
+    <a href="/summary">Summary</a>
+  </nav> --}}
+  {{#with main}}
+  <main>
+    <section>
+      {{> title data='Work history' big=true}}
+      <div>
+        <ul>
+          {{#each works}}
+          <li>
+            <div>{{position}}</div>
+
+            <br>
+
+            <div>
+              {{durations.from}} -
+              {{#if durations.to}}
+              {{durations.to}}
+              {{else}}
+              (досі працюємо)
+              {{/if}}
+            </div>
+
+            <br>
+
+            <div>
+              {{#if company.url}}
+              {{> link text=company.name href=company.url blank=true noLine=true}}
+              {{else}}
+              <b>{{company.name}}</b>
+              {{/if}}
+            </div>
+
+            <br>
+            <br>
+
+            <div>
+              <strong>Projects: ({{projectAmount}})</strong>
+            </div>
+
+            <br>
+            <ul>
+              {{#each projects}}
+              <li>
+                <div>{{> link text=name href=url blank=true noLine=true}}</div>
+                <br>
+                <div>
+                  <p>
+                    {{about}}
+                  </p>
+                </div>
+                <br>
+                <div><em>Project stacks ({{stackAmount}})</em></div>
+                <br>
+                <div>
+                  <ul>
+                    {{#each stacks}}
+                    <li>
+                      {{name}}
+                    </li>
+                    {{/each}}
+                  </ul>
+                </div>
+                <br>
+                <div><em>Project awards</em></div>
+                <br>
+                <div>
+                  <ul>
+                    {{#each awards}}
+                    <li>
+                      {{name}}
+                    </li>
+                    {{/each}}
+                  </ul>
+                </div>
+              </li>
+              {{/each}}
+            </ul>
+
+          </li>
+          <br>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+  </main>
+  {{/with}}
+
+  {{!-- <footer>
+    <hr>
+    <br>
+    <a href="{{social.email.href}}">{{social.email.text}}</a> /
+    <a href="{{social.phone.href}}">{{social.phone.text}}</a> /
+    <a href="{{social.linkedin.href}}" target="_blank">{{social.linkedin.text}}</a>
+  </footer> --}}
+  {{!-- <footer>
+    <hr>
+    <br>
+    {{#with social}}
+    <a href="{{email.href}}">{{email.text}}</a> /
+    <a href="{{phone.href}}">{{phone.text}}</a> /
+    <a href="{{linkedin.href}}" target="_blank">{{linkedin.text}}</a>
+    {{/with}}
+  </footer> --}}
+
+  {{!-- <footer>
+    <hr>
+    <br>
+    {{#with social}}
+
+    {{#with email}}
+    {{> link}}
+    {{/with}}
+
+    {{#with phone}}
+    {{> link}}
+    {{/with }}
+
+    {{#with linkedin}}
+    {{> link}}
+    {{/with}}
+
+    {{/with}}
+  </footer> --}}
+
+  {{!-- <footer>
+    <hr>
+    <br>
+    {{#with social}}
+    {{> link data=email}}
+    {{> link data=phone}}
+    {{> link data=linkedin}}
+    {{/with}}
+  </footer> --}}
+
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

@@ -1,0 +1,37 @@
+<li>
+    <button type="button" class="btn btn-primary position-relative">
+        <b>Groups:</b>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            99+
+            <span class="visually-hidden">unread messages</span>
+        </span>
+    </button>
+    <ul>
+        {{#each groups}}
+        <li>
+            <p><b>Id: </b>{{id}}</p>
+        </li>
+        <li>
+            <p><b>Name: </b>{{name}}</p>
+        </li>
+        <li>
+            <p><b>Description: </b>{{description}}</p>
+        </li>
+        <li>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                <h6>Members:</h6>
+            </a>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <ul>
+                        {{#each members}}
+                        {{>user_card}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</li>

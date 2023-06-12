@@ -1,0 +1,107 @@
+<div style="margin-left: 36px;">
+  <h1 style="margin-top: 36px;">
+    <div class="p-3 mb-2 bg-primary text-white" style="border-radius: 20px;">
+      <p style="text-align: center;">{{name}}</p>
+    </div>
+  </h1>
+  <div>
+    <h2>Users:</h2>
+    <ul>
+      {{#with users.[0]}}
+      {{> user_card font=true}}
+      <li>
+        <b>Friends:</b>
+        <ul>
+          {{#with friends.[0]}}
+          {{> user_card}}
+          <li>
+            <a class=" btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">
+              <h6>Mutual friends:</h6>
+            </a>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <ul>
+                  {{#each mutual_friends}}
+                  {{> user_card}}
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </li>
+          <br>
+          {{/with}}
+          {{#with friends.[1]}}
+          {{> user_card}}
+          <li>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">
+              <h6>Mutual friends:</h6>
+            </a>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <ul>
+                  {{#each mutual_friends}}
+                  {{> user_card}}
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </li>
+          <br>
+          {{/with}}
+        </ul>
+      </li>
+      {{> facebook_groups}}
+      {{/with}}
+    </ul>
+    <ul>
+      {{#with users.[1]}}
+      {{> user_card font=true}}
+      <li>
+        <b>Friends:</b>
+        <ul>
+          {{#with friends.[0]}}
+          {{> user_card}}
+          <li>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">
+              <h6>Mutual friends:</h6>
+            </a>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <ul>
+                  {{#with mutual_friends.[0]}}
+                  {{> user_card}}
+                  {{/with}}
+                </ul>
+                <ul>
+                  {{#with mutual_friends.[1]}}
+                  {{> user_card}}
+                  <li>
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                      aria-expanded="false" aria-controls="collapseExample">
+                      <h6>Mutual friends:</h6>
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                      <div class="card card-body">
+                        <ul>
+                          {{> user_card}}
+                        </ul>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </li>
+          <br>
+          {{/with}}
+        </ul>
+      </li>
+      {{> facebook_groups}}
+      {{/with}}
+    </ul>
+    </li>
+    {{/with}}
+    </ul>
+  </div>
+</div>

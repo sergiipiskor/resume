@@ -1,0 +1,27 @@
+{{#if font}}
+<li>
+    <p><button type="button" class="btn btn-primary"><b>Id: </b>{{id}}</button></p>
+</li>
+<li>
+    <p><button type="button" class="btn btn-success"><b>Name: </b>{{name}}</button></p>
+</li>
+<li>
+    <p><button type="button" class="btn btn-danger"><b>Gender: </b>{{gender}}</button></p>
+</li>
+<li>
+    <p><button type="button" class="btn btn-warning"><b>Age: </b>{{age}}</button></p>
+</li>
+{{else}}
+<li>
+    <p><button type="button" class="btn btn-outline-primary"><b>Id: </b>{{id}}</button></p>
+</li>
+<li>
+    <p><button type="button" class="btn btn-outline-success"><b>Name: </b>{{name}}</button></p>
+</li>
+<li>
+    <p><button type="button" class="btn btn-outline-danger"><b>Gender: </b>{{gender}}</button></p>
+</li>
+<li>
+    <p><button type="button" class="btn btn-outline-warning"><b>Age: </b>{{age}}</button></p>
+</li>
+{{/if}}

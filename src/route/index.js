@@ -855,8 +855,13 @@ router.get('/facebook', function (req, res) {
             ],
           },
         ],
-        
-===================
+      },
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// =====================================================
 
 router.get('/mac', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -946,15 +951,22 @@ router.get('/mac', function (req, res) {
         },
       ],
     },
-    
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 // ============================================================================================
-    
+
 router.get('/car', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('car', {
     layout: 'basic',
+
+    page: {
+      title: 'Car',
+    },
 
     make: 'Toyota',
     model: 'Camry',
@@ -1044,15 +1056,22 @@ router.get('/car', function (req, res) {
       },
       total: 28990,
     },
-    
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 // ===========================================================
-    
+
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
     layout: 'basic',
+
+    page: {
+      title: 'Js',
+    },
 
     name: 'JavaScript',
     description:

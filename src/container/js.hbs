@@ -1,0 +1,127 @@
+<div style="margin-left: 36px">
+  <h1>{{name}}</h1>
+  <hr>
+  <p><b>Description: </b>{{description}}</p>
+  <br>
+  <div>
+    <ul>
+      <li>
+        <h4>History:</h4>
+        {{#with history}}
+        {{year}}
+        {{founder}}
+        {{/with}}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <h4>Types:</h4>
+        {{#with types}}
+        <button type="button" class="btn btn-primary">Number</button>
+        <button type="button" class="btn btn-secondary">String</button>
+        <button type="button" class="btn btn-success">Boolean</button>
+        <button type="button" class="btn btn-danger">Null</button>
+        <button type="button" class="btn btn-warning">Undefined</button>
+        <button type="button" class="btn btn-info">Symbol</button>
+        <button type="button" class="btn btn-dark">Object</button>
+        {{/with}}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <h4>Syntax:</h4>
+        {{#with syntax}}
+        {{#with variables}}
+        <span class="badge text-bg-primary">var</span>
+        <span class="badge text-bg-secondary">let</span>
+        <span class="badge text-bg-success">const</span>
+        {{/with}}
+        <br>
+        {{#with functions}}
+        <span class="badge text-bg-primary">function</span>
+        {{/with}}
+        <br>
+        {{#with conditionals}}
+        <span class="badge text-bg-primary">if</span>
+        <span class="badge text-bg-secondary">else</span>
+        <span class="badge text-bg-success">switch</span>
+        {{/with}}
+        <br>
+        {{#with loops}}
+        <span class="badge text-bg-primary">for</span>
+        <span class="badge text-bg-secondary">while</span>
+        <span class="badge text-bg-success">do-while</span>
+        {{/with}}
+        <br>
+        {{#with classes}}
+        <span class="badge text-bg-primary">class</span>
+        {{/with}}
+
+        {{/with}}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <h4>Features:</h4>
+        {{#each features}}
+      </li>
+      <li style="list-style-type: none">
+        {{this}}<br>
+        {{/each}}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <h4>Libraries:</h4>
+        {{#with libraries}}
+        <button type="button" class="btn btn-outline-primary">jQuery</button>
+        <button type="button" class="btn btn-outline-secondary">React</button>
+        <button type="button" class="btn btn-outline-success">Angular</button>
+        <button type="button" class="btn btn-outline-danger">Vue</button>
+        <button type="button" class="btn btn-outline-warning">Node.js</button>
+        <button type="button" class="btn btn-outline-info">Express.js</button>
+        <button type="button" class="btn btn-outline-success">Lodash</button>
+        <button type="button" class="btn btn-outline-dark">Moment.js</button>
+        {{/with}}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <h4>Tools:</h4>
+        {{#with tools}}
+        <button type="button" class="btn btn-primary">Babel</button>
+        <button type="button" class="btn btn-secondary">Webpack</button>
+        <button type="button" class="btn btn-success">ESLint</button>
+        <button type="button" class="btn btn-danger">Jest</button>
+        <button type="button" class="btn btn-warning">Mocha</button>
+        <button type="button" class="btn btn-info">Chai</button>
+        <button type="button" class="btn btn-dark">Selenium</button>
+        <button type="button" class="btn btn-success">Cypress</button>
+        {{/with}}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <h4>Community:</h4>
+        {{#with community}}
+        <button type="forum" class="alert alert-primary" role="alert" class="btn btn-link">Stack Overflow</button>
+        <button type="newsletter" class="alert alert-info" role="alert" class="btn btn-link">JavaScript Weekly</button>
+        <button type="podcast" class="alert alert-danger" role="alert" class="btn btn-link">The Changelog</button>
+        <button type="blog" class="alert alert-success" role="alert" class="btn btn-link">CSS-Tricks</button>
+        {{/with}}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,181 @@
+<div style="margin-left: 36px">
+  <p>
+  <div class="alert alert-info" style="text-align: center;" role="alert">
+    <h1>{{name}}</h1>
+  </div>
+  </p>
+  <p><b>Description: </b>{{description}}</p>
+  <p><b>Price: </b>{{price}}</p>
+  <p><b>Category: </b>{{category}}</p>
+  {{#with features}}
+  <h3>Features:</h3>
+  <div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="font-size: 25px;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {{#with processor}}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Processor
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Brand: {{brand}}</a></li>
+                <li><a class="dropdown-item" href="#">Model: {{model}}</a></li>
+                <li><a class="dropdown-item" href="#">Speed: {{speed}}</a></li>
+                <li><a class="dropdown-item" href="#">Cores: {{cores}}</a></li>
+                <li><a class="dropdown-item" href="#">Cache: {{cache}}</a></li>
+              </ul>
+            </li>
+            {{/with}}
+            {{#with memory}}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Memory
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Type: {{type}}</a></li>
+                <li><a class="dropdown-item" href="#">Size: {{size}}</a></li>
+                <li><a class="dropdown-item" href="#">Speed: {{Speed}}</a></li>
+              </ul>
+            </li>
+            {{/with}}
+            {{#with storage}}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Storage
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Type: {{type}}</a></li>
+                <li><a class="dropdown-item" href="#">Size: {{size}}</a></li>
+              </ul>
+            </li>
+            {{/with}}
+            {{#with display}}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Display
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Size: {{size}}</a></li>
+                <li><a class="dropdown-item" href="#">Resolution: {{resolution}}</a></li>
+                <li><a class="dropdown-item" href="#">Technology: {{technology}}</a></li>
+                <li><a class="dropdown-item" href="#">Color space: {{color_space}}</a></li>
+                <li><a class="dropdown-item" href="#">Brightness: {{brightness}}</a></li>
+                <li><a class="dropdown-item" href="#">Refresh rate: {{refresh_rate}}</a></li>
+              </ul>
+            </li>
+            {{/with}}
+            {{#with graphics}}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Graphics
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Brand: {{brand}}</a></li>
+                <li><a class="dropdown-item" href="#">Model: {{model}}</a></li>
+                <li><a class="dropdown-item" href="#">Memory: {{memory}}</a></li>
+              </ul>
+            </li>
+            {{/with}}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <br>
+  <h4>Ports:</h4>
+  <div>
+    {{#each ports}}
+    <ul>
+      <p><button type="button" class="btn btn-primary">Type: {{type}}</button></p>
+      <p><button type="button" class="btn btn-primary">Count: {{count}}</button></p>
+      {{#if features}}
+      <p><button type="button" class="btn btn-primary">Features:</button></p>
+      <ul>
+        {{#each features}}
+        <li>{{this}}</li>
+        {{/each}}
+        {{/if}}
+      </ul>
+    </ul>
+    {{/each}}
+  </div>
+  <br>
+  <h4>Battery:</h4>
+  <div>
+    <ul>
+      {{#with battery}}
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+          <button type="button" class="btn btn-primary">Type: {{type}}</button>
+          <button type="button" class="btn btn-primary">Capacity: {{capacity}}</button>
+          <button type="button" class="btn btn-primary">Life: {{life}}</button>
+        </div>
+      </div>
+      {{/with}}
+    </ul>
+  </div>
+  <br>
+  <h4>Weight:</h4>
+  <div>
+    <ul>
+      <a class="btn btn-primary" href="#" role="button">Weight: {{weight}}</a>
+    </ul>
+  </div>
+  <h4>Dimensions:</h4>
+  <div>
+    <ul>
+      {{#with dimensions}}
+      <li>
+        <p><button type="button" class="btn btn-secondary btn-sm">Height: {{height}}</button></p>
+      </li>
+      <li>
+        <p><button type="button" class="btn btn-secondary btn-sm">Width: {{width}}</button></p>
+      </li>
+      <li>
+        <p><button type="button" class="btn btn-secondary btn-sm">Depth: {{depth}}</button></p>
+      </li>
+    </ul>
+    {{/with}}
+  </div>
+  <h4>Operating system:</h4>
+  <div>
+    <ul>
+      <button class="btn btn-primary" type="submit">{{operating_system}}</button>
+    </ul>
+  </div>
+  <h4>Accessories:</h4>
+  <div>
+    <ul>
+      {{#each accessories}}
+      <li>
+        <div class="btn-group" role="group" style="padding-bottom: 15px;"
+          aria-label="Button group with nested dropdown">
+          <button type="button" class="btn btn-primary">{{name}}</button>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Price
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">{{price}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+  {{/with}}
+</div>

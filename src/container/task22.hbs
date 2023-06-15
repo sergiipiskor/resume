@@ -1,0 +1,76 @@
+<section>
+  <section class="text-center">
+    {{#with page_header}}
+    <p><span class="text-center">
+        <h1>{{title}}</h1>
+      </span></p>
+    <span class="text-uppercase">{{description}}</span>
+    {{/with}}
+  </section>
+
+  <section>
+    <section>
+      <div class="card">
+        <div class="card-body">
+          {{#with section}}
+          {{#with about_us}}
+          {{#with title_list}}
+          <div class="text-end">
+            <p><span class="display-6">{{main}}</span></p>
+            <p>
+            <h2>{{sub}}</h2>
+            </p>
+          </div>
+          <br>
+          {{/with}}
+          {{#with button}}
+          <p><span class="btn btn-outline-info">{{text}}</span></p>
+          {{/with}}
+          {{/with}}
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <div class="card-body">
+          {{#with advantage}}
+          <p class="text-muted"><span class="display-5">{{title}}</span></p>
+          {{> advantage_card_body point_1=true}}
+          {{> advantage_card_body point_2=true}}
+          {{> advantage_card_body}}
+          {{/with}}
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <div class="card-body">
+          {{#with agreement}}
+          <p><span class="display-5">{{title}}</span></p>
+          <div class="card">
+            <div class="card-body">
+              {{#with info}}
+              <p><span>
+                  <h5>{{sub_title}}</h5>
+                </span></p>
+              <div class="card">
+                <div class="card-body">
+                  {{#with detail}}
+                  <p><span>{{text}}</span></p>
+                  <p><span class="btn btn-success">{{button}}</span></p>
+                  {{/with}}
+                </div>
+              </div>
+              {{/with}}
+            </div>
+          </div>
+          {{/with}}
+        </div>
+      </div>
+    </section>
+
+    {{/with}}
+  </section>
+</section>

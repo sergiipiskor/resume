@@ -1,0 +1,51 @@
+{{#if point_1}}
+<p>
+<div class="card">
+    <div class="card-body">
+        {{#with efficiency}}
+        <div>
+            <p class="text-muted"><span class="display-4">{{title}}</span></p>
+            <h6>{{sub_title}}</h6>
+            {{description}}
+        </div>
+        <br>
+        <p><span class="btn btn-outline-warning">{{button}}</span></p>
+        {{/with}}
+    </div>
+</div>
+</p>
+{{else}}
+{{#if point_2}}
+</p>
+<div class="card">
+    <div class="card-body">
+        {{#with innovation}}
+        <div class="text-center">
+            <p class="text-muted"><span class="display-4">{{title}}</span></p>
+            <h6>{{sub_title}}</h6>
+            {{description}}
+        </div>
+        <br>
+        <p><span class="btn btn-outline-warning">{{button}}</span></p>
+        {{/with}}
+    </div>
+</div>
+</p>
+{{else}}
+<p>
+<div class="card">
+    <div class="card-body">
+        {{#with collaboration}}
+        <div class="text-end">
+            <p class="text-muted"><span class="display-4">{{title}}</span></p>
+            <h6>{{sub_title}}</h6>
+            {{description}}
+        </div>
+        <br>
+        <p><span class="btn btn-outline-warning">{{button}}</span></p>
+        {{/with}}
+    </div>
+</div>
+</p>
+{{/if}}
+{{/if}}

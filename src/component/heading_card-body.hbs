@@ -1,0 +1,55 @@
+{{#if point_1}}
+<p>
+<div class="card">
+    <div class="card-body">
+        {{#with main}}
+        <p><span>
+                <h1>{{title}}</h1>
+            </span></p>
+        <p><span>{{text}}</span></p>
+        {{#with button_text}}
+        <p><span class="btn btn-primary">{{solid}}</span></p>
+        <p><span class="btn btn-outline-primary">{{outline}}</span></p>
+        {{/with}}
+        {{/with}}
+    </div>
+</div>
+</p>
+{{else}}
+{{#if point_2}}
+</p>
+<div class="card">
+    <div class="card-body">
+        {{#with second}}
+        <p><span>
+                <h2>{{title}}</h2>
+            </span></p>
+        <p><span>{{text}}</span></p>
+        {{#with button_text}}
+        <p><span class="btn btn-secondary">{{solid}}</span></p>
+        <p><span class="btn btn-secondary, text-secondary" style="border-color: grey;">{{outline}}</span>
+        </p>
+        {{/with}}
+        {{/with}}
+    </div>
+</div>
+</p>
+{{else}}
+<p>
+<div class=" card">
+    <div class="card-body">
+        {{#with subblock}}
+        <p><span>
+                <h3>{{title}}</h3>
+            </span></p>
+        <p><span>{{text}}</span></p>
+        {{#with button_text}}
+        <p><span class="btn btn-dark">{{solid}}</span></p>
+        <p><span class="btn btn-dark, text-dark" style="border-color: black;">{{outline}}</span></p>
+        {{/with}}
+        {{/with}}
+    </div>
+</div>
+</p>
+{{/if}}
+{{/if}}

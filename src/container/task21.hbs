@@ -1,0 +1,65 @@
+<section>
+  <section>
+    <div class="card">
+      <div class="card-body">
+        {{#with heading}}
+        {{> heading_card-body point_1=true}}
+        {{> heading_card-body point_2=true}}
+        {{> heading_card-body}}
+        {{/with}}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="card-body">
+        {{#with nested_display}}
+        <p><span class="display-1">{{title}}</span></p>
+        <div class="card">
+          <div class="card-body">
+            {{#with children_display}}
+            <p><span class="display-4">{{title}}</span></p>
+            <p><span class="text-capitalize">{{text}}</span>
+              {{#with button}}
+            <p><span class="btn btn-outline-warning">{{text}}</span></p>
+            {{/with}}
+            {{/with}}
+          </div>
+        </div>
+        <p><span>
+            <h6>{{header_text}}</h6>
+          </span></p>
+        {{#with button}}
+        <p><span class="btn btn-info text-light">{{text}}</span></p>
+        {{/with}}
+        {{/with}}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="card-body">
+        {{#with paragraph}}
+        <p><span class="text-uppercase">{{title}}</span></p>
+        <p><span class="text-lowercase">{{text}}</span></p>
+        {{#with button}}
+        <p><a href="{{url}}">{{text}}</a></p>
+        {{/with}}
+        <ul>
+          <div class="card">
+            <div class="card-body" style="padding-left: 40px;">
+              {{#each list_name}}
+              <li>
+                <p><a href="{{url}}">{{text}}</a></p>
+              </li>
+              {{/each}}
+            </div>
+          </div>
+        </ul>
+        {{/with}}
+      </div>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,220 @@
+<main class="m-5">
+  {{!-- navigation --}}
+  <section>
+    {{#with navigation}}
+    {{#with links}}
+    <div class="nav">
+      <div class="nav-item">
+        <a href="{{[0].href}}" class="nav-link">{{[0].text}}</a>
+      </div>
+      <div class="nav-item">
+        <a href="{{[1].href}}" class="nav-link">{{[1].text}}</a>
+      </div>
+      <div class="nav-item">
+        <a href="{{[3].href}}" class="nav-link disabled">{{[2].text}}</a>
+      </div>
+    </div>
+    {{/with}}
+    {{/with}}
+
+  </section>
+
+  {{!-- breadcrumb --}}
+  <section>
+    <ol class="breadcrumb mt-5">
+      {{#each breadcrumb}}
+      <li class="breadcrumb-item">
+        <a href="{{url}}">{{name}}</a>
+      </li>
+      {{/each}}
+    </ol>
+  </section>
+
+  {{!-- sortBlock --}}
+  <section>
+    <h1>{{header}}</h1>
+    <div class="row mb-5">
+      {{#each sortBlock}}
+      <div class="col-3">
+        <label class="form-lable">{{label}}</label>
+        <select class="form-select">
+          <option selected>{{placeholder}}</option>
+          {{#each options}}
+          <option value="{{value}}">{{text}}</option>
+          {{/each}}
+        </select>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+
+  {{!-- filterBlock --}}
+  <section>
+    <div class="row">
+      <div class="col-4">
+        {{#with filterBlock}}
+        <div class="card">
+          <div class="m-2">
+            {{#with sellers}}
+            <h6>{{title}}</h6>
+            {{#each list}}
+            <div class="form-check">
+              <label class="form-check-lable">{{value}}</label>
+              <input name="delivery" type="radio" class="form-check-input">
+            </div>
+            {{/each}}
+            {{/with}}
+          </div>
+
+          <hr class="mx-3">
+
+          <div class="m-3">
+            {{#with brands}}
+            <h6>{{title}}</h6>
+            {{#with input}}
+            <input placeholder="{{placeholder}}" class="form-control">
+            {{/with}}
+            {{#each options}}
+            <div class="form-check">
+              <label class="form-check-lable">{{value}}</label>
+              <input name="delivery" type="radio" class="form-check-input">
+            </div>
+            {{/each}}
+            {{/with}}
+          </div>
+
+          <hr class="mx-3">
+
+          <div class="m-3">
+            {{#with price}}
+            <h6>{{title}}</h6>
+            {{#with range}}
+            <input placeholder="{{from}}" class="form-control"><br>
+            <input placeholder="{{to}}" class="form-control mb-2">
+            {{/with}}
+            <div>
+              {{#with button}}
+              <a href="{{link}}" class="btn btn-outline-secondary">{{text}}</a>
+              {{/with}}
+            </div>
+            {{/with}}
+          </div>
+
+          <hr class="mx-3">
+
+          <div class="m-3">
+            {{#each filterList}}
+            <h6>{{title}}</h6>
+            {{#each options}}
+            <div class="form-check">
+              <label name="name" class="form-check-lable">{{value}}</label>
+              <input type="radio" class="form-check-input">
+            </div>
+            {{/each}}
+            {{#if @last}}
+            {{else}}
+            <hr class="mx-3">
+            {{/if}}
+            {{/each}}
+          </div>
+
+        </div>
+        {{/with}}
+      </div>
+
+      <div class="col-8">
+        <div class="row">
+          {{#each goodsList}}
+          <div class="col-6">
+            {{> catalogItem}}
+          </div>
+          {{/each}}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {{!-- service --}}
+  <section>
+    {{#with service}}
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="card text-bg-success text-center p-2">
+          <h2>{{title}}</h2>
+          <p>{{description}}</p>
+          {{#each buttons}}
+          <div class="col-12 m-1">
+            <a href=" {{link}}" class="btn btn-primary ">{{text}}</a>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/with}}
+    <hr class="my-5">
+  </section>
+
+  {{!-- footer --}}
+  <section>
+    <div class="row">
+      <div class="col-2">
+        <div class="nav flex-column">
+          {{#each footer.[0]}}
+          <div class="nav-item">
+            <div>
+              <a href="{{link}}" class="nav-link {{#if @last}} disabled{{/if}}">{{text}}</a>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="nav flex-column">
+          {{#each footer.[1]}}
+          <div class="nav-item">
+            <div>
+              <a href="{{link}}" class="nav-link {{#if @last}} disabled{{/if}}">{{text}}</a>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="nav flex-column">
+          {{#each footer.[2]}}
+          <div class="nav-item">
+            <div>
+              <a href="{{link}}" class="nav-link {{#if @last}} disabled{{/if}}">{{text}}</a>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="nav flex-column">
+          {{#each footer.[3]}}
+          <div class="nav-item">
+            <div>
+              <a href="{{link}}" class="nav-link {{#if @last}} disabled{{/if}}">{{text}}</a>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="nav flex-column">
+          {{#each footer.[4]}}
+          <div class="nav-item">
+            <div>
+              <a href="{{link}}" class="nav-link {{#if @last}} disabled{{/if}}">{{text}}</a>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>

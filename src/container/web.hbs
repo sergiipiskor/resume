@@ -1,75 +1,77 @@
-<div>{{#with web}}
+<div class="m-5">
+  {{#with web}}
 
   <h1>Web</h1>
-  <hr>
-  <h2>Languages: </h2>
+  <hr class="flex-co">
+  <h2 class="btn btn-success col-12"><b>Languages: </b></h2>
 
-  <section>
-    <div>{{#with languages.[0]}}
-      {{> web_start_descriptions}}
-      <strong>Elements:</strong>
-      <div>{{#each elements}}
-        {{> web_definition}}
-        <ul>
-          <h4>Attributes:</h4>
-          <div>{{#each attributes}}
-            <li>
-              {{> web_definition}}
-            </li>
-            {{/each}}
-          </div>
-        </ul>
-        {{/each}}
+  <div class="row">
+    <section class="col-4 bg-danger text-light">
+      <div>{{#with languages.[0]}}
+        {{> web_start_descriptions}}
+        <strong>Elements:</strong>
+        <div>{{#each elements}}
+          {{> web_definition}}
+          <ul>
+            <h4>Attributes:</h4>
+            <div>{{#each attributes}}
+              <li>
+                {{> web_definition}}
+              </li>
+              {{/each}}
+            </div>
+          </ul>
+          {{/each}}
+        </div>
+        {{/with}}
       </div>
-      {{/with}}
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <div>{{#with languages.[1]}}
-      {{> web_start_descriptions}}
-      <div>{{#each properties}}
-        {{> web_definition}}
-        <strong>Values:</strong>
-        <ul>
-          <div>{{#each values}}
-            <li>
-              <p><em>{{value}}</em> - {{description}}</p>
-            </li>
-            {{/each}}
-          </div>
-        </ul>
-        {{/each}}
+    <section class="col-4 bg-primary text-light">
+      <div>{{#with languages.[1]}}
+        {{> web_start_descriptions}}
+        <div>{{#each properties}}
+          {{> web_definition}}
+          <strong>Values:</strong>
+          <ul>
+            <div>{{#each values}}
+              <li>
+                <p><em>{{value}}</em> - {{description}}</p>
+              </li>
+              {{/each}}
+            </div>
+          </ul>
+          {{/each}}
+        </div>
+        {{/with}}
       </div>
-      {{/with}}
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <div>{{#with languages.[2]}}
-      {{> web_start_descriptions}}
-      <div>{{#each functions}}
-        {{> web_definition}}
-        <ul>
-          <strong>Parameters:</strong>
-          <div>{{#each parameters}}
-            <li>
-              <p><b>Name: </b>{{name}}</p>
-            </li>
-            <li>
-              <p><b>Type: </b>{{type}}</p>
-            </li>
-            <li>
-              <p><b>Description: </b>{{description}}</p>
-            </li>
-            {{/each}}
-          </div>
-        </ul>
-        {{/each}}
+    <section class="col-4 bg-dark text-light">
+      <div>{{#with languages.[2]}}
+        {{> web_start_descriptions}}
+        <div>{{#each functions}}
+          {{> web_definition}}
+          <ul>
+            <strong>Parameters:</strong>
+            <div>{{#each parameters}}
+              <li>
+                <p><b>Name: </b>{{name}}</p>
+              </li>
+              <li>
+                <p><b>Type: </b>{{type}}</p>
+              </li>
+              <li>
+                <p><b>Description: </b>{{description}}</p>
+              </li>
+              {{/each}}
+            </div>
+          </ul>
+          {{/each}}
+        </div>
+        {{/with}}
       </div>
-      {{/with}}
-    </div>
-  </section>
-
+    </section>
+  </div>
   {{/with}}
 </div>

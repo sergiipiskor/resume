@@ -1,17 +1,86 @@
-{{!--
-Це код container файлу для index сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
---}}
+<main class="p-5">
+    <div class="card mb-5">
+        <div class="row">
+            <div class="col-6">
+                <h6 class="p-3">{{firstname}} {{lastname}}</h6>
+            </div>
+            <div class="col-6 text-end">
+                <h6 class="p-3">{{project_type}}</h6>
+            </div>
+        </div>
+    </div>
+    <div class="mb-5">
+        <h4>Список сторінок:</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa deserunt quidem asperiores voluptate enim
+            cupiditate cumque numquam id, eveniet itaque consectetur voluptatum delectus blanditiis similique
+            perferendis
+            magnam amet voluptas? At.</p>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="flex-column">
+                <div class="card" style="border-color:rgb(25, 135, 84)">
+                    <div class=" card-header text-bg-success">
+                        <h4>HTML:</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a class="btn btn-primary mb-1" href="/summary">Summary</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/education">Education</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/skills">Skills</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/work">Work</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a class="btn btn-primary mb-1" href="/person">Person</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/bio">Bio</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/program">Program</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/web">Web</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="flex-column">
+                <div class="card" style="border-color:rgb(25, 135, 84)">
 
-<div class="p-5">
-    <h1>USB хаб Type C 12 в 1 HDMI VGA AUX 3.5 mm</h1>
-
-    <button type="button" class="btn btn-primary">Купити</button>
-</div>
-
-{{!--
-Цей код містить лише те, що буде виводитись в
-
-<body>
-    Адже наш layout/default.hbs має вже структуру HTML
-    --}}
+                    <div class="card-header text-bg-success">
+                        <h4>Bootstrap:</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <p><a class="btn btn-primary mb-1" href="/js">JS</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/car">Car</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/task21">Task21</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/task22">Task22</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/task31">Task31</a></p>
+                            </div>
+                            <div class="col-6">
+                                <p><a class="btn btn-primary mb-1" href="/shophome">Shophome</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/shoporder">Shoporder</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/shopcart">Shopcart</a></p>
+                                <p><a class="btn btn-primary mb-1" href="/shopprofile">Shopprofile</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="flex-column">
+                <div class="card" style="border-color:rgb(25, 135, 84)">
+                    <div class="card-header text-bg-success">
+                        <h4>CSS:</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><a class="btn btn-primary mb-1" href="/shopcatalog">Shopcatalog</a></p>
+                        <p><a class="btn btn-primary mb-1" href="/shopreview">Shopreview</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

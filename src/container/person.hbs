@@ -1,160 +1,176 @@
 {{!-- data name --}}
-{{#with person}}
-<div>
-  <h1>{{name}}</h1>
-</div>
-<hr>
-<section>
-  <b>Age: </b>{{age}}<br>
-  <br>
-  <b>Gender: </b>{{gender}}<br>
-  <address>
-    {{#with address}}
-    <p>{{street}} {{city}} {{state}} {{zip}}, {{country}}</p>
-    {{/with}}
-  </address>
-</section>
-
-{{!-- educations --}}
-<section>
-  {{#each education}}
+<main class="m-5">
+  {{#with person}}
   <div>
-    <h2><em>Education:</em></h2>
+    <h1>{{name}}</h1>
   </div>
   <hr>
-  <p><b>Degree: </b>{{degree}}</p>
-  <p><b>Major: </b>{{major}}</p>
-  <p><b>University: </b>{{university}} ({{graduationYear}})</p>
-  {{/each}}
-</section>
-
-{{!-- workExperience --}}
-<section>
-  {{#each workExperience}}
-  <div>
-    <h2><em>Work experience:</em></h2>
-  </div>
-  <hr>
-
-  <div>
-    <u>
-      <h3><b>Сompany: </b></h3>
-    </u>
-  </div>
-
-  <div style="margin-left: 24px;">
-    <p><b>Name: </b>{{company}}</p>
-    <p><b>Position: </b>{{title}}</p>
-    <p><b>Star date: </b>{{startDate}}</p>
-    <p><b>End date: </b>{{endDate}}</p>
-    <p><b>Responsibilities: </b></p>
-    <ul>
-      {{#each responsibilities}}
-      <p>
-        <li>{{this}}</li>
-      </p>
-      {{/each}}
-    </ul>
-    <p><b>Year Founded: </b>{{year_founded}}</p>
-    <p><b>Industry: </b>{{industry}}</p>
-  </div>
-
-  <div>
-    <u>
-      <h3><b>Employees: </b></h3>
-    </u>
-    <div style="margin-left: 24px;">
-      {{#each employees}}
-      <p><b>Name: </b>{{name}}</p>
-      <p><b>Position: </b>{{position}}</p>
-      <p><b>Department: </b>{{department}}</p>
-    </div>
-  </div>
-
-  <div>
-    <u>
-      <h3><b>Projects: </b></h3>
-    </u>
-    <div style="margin-left: 24px;">
-      {{#each projects}}
-      <p><b>Name: </b>{{name}}</p>
-      <p><b>Description: </b>{{description}}</p>
-      <p><b>Status: </b>{{status}}</p>
-    </div>
-  </div>
-
-  <div>
-    <u>
-      <h3><b>Teams: </b></h3>
-    </u>
-    <div style="margin-left: 24px;">
-      {{#each teams}}
-      <p><b>Team name: </b>{{team_name}}</p>
-      {{#with team_leader}}
-      <p><b>Name: </b>{{name}}</p>
-      <p><b>Title: </b>{{title}}</p>
-      <p><b>Email: </b>{{email}}</p>
+  <section>
+    <b>Age: </b>{{age}}<br>
+    <br>
+    <b>Gender: </b>{{gender}}<br>
+    <address>
+      {{#with address}}
+      <p>{{street}} {{city}} {{state}} {{zip}}, {{country}}</p>
       {{/with}}
+    </address>
+  </section>
+
+  {{!-- educations --}}
+  <section>
+    {{#each education}}
+    <div>
+      <h2><em>Education:</em></h2>
     </div>
-  </div>
+    <hr>
+    <p><b>Degree: </b>{{degree}}</p>
+    <p><b>Major: </b>{{major}}</p>
+    <p><b>University: </b>{{university}} ({{graduationYear}})</p>
+    {{/each}}
+  </section>
 
-  <div>
-    <u>
-      <h3><b>Team members: </b></h3>
-    </u>
-    <div style="margin-left: 24px;">
-      {{#each team_members}}
-      <p><b>Name: </b>{{name}}</p>
-      <p><b>Title: </b>{{title}}</p>
-      <p><b>Email: </b>{{email}}</p>
-      <h4><b>Skills: </b></h4>
-      <ul>
-        {{#each skills}}
-        <li>
-          <p>{{this}}</p>
-        </li>
-        {{/each}}
-      </ul>
+  {{!-- workExperience --}}
+  <section>
+    {{#each workExperience}}
+    <div>
+      <h2><em>Work experience:</em></h2>
     </div>
-  </div>
+    <hr>
+    <section class="row">
 
-  <div>
-    <u>
-      <h3><b>Projects: </b></h3>
-    </u>
-    <div style="margin-left: 24px;">
-      {{#each projects}}
-      <p><b>Name: </b>{{name}}</p>
-      <p><b>Description: </b>{{description}}</p>
+      <div class="dropdown col-2">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <h6><b>Сompany: </b></h6>
+        </button>
 
-      <div>
-        <h4><b>Technologies: </b></h4>
-        <ul>
-          {{#each technologies}}
-          <li>
-            <p>{{this}}</p>
-          </li>
-          {{/each}}
+        <ul class="dropdown-menu">
+          <div class="m-2">
+            <p class="dropdown-item"><b>Name: </b>{{company}}</p>
+            <p class="dropdown-item"><b>Position: </b>{{title}}</p>
+            <p class="dropdown-item"><b>Star date: </b>{{startDate}}</p>
+            <p class="dropdown-item"><b>End date: </b>{{endDate}}</p>
+            <p class="dropdown-item"><b>Responsibilities: </b></p>
+            <ul>
+              {{#each responsibilities}}
+              <p>
+                <li>{{this}}</li>
+              </p>
+              {{/each}}
+            </ul>
+            <p class="dropdown-item"><b>Year Founded: </b>{{year_founded}}</p>
+            <p class="dropdown-item"><b>Industry: </b>{{industry}}</p>
+
+          </div>
+      </div>
+
+      <div class="dropdown col-2">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <h6><b>Employees: </b></h6>
+        </button>
+        <ul class="dropdown-menu">
+          <div class="m-2">
+            {{#each employees}}
+            <p class="dropdown-item"><b>Name: </b>{{name}}</p>
+            <p class="dropdown-item"><b>Position: </b>{{position}}</p>
+            <p class="dropdown-item"><b>Department: </b>{{department}}</p>
+          </div>
         </ul>
       </div>
 
-      <div>
-        <h4><b>Team members:</b></h4>
-        <ul>
-          {{#each team_members}}
-          <li>
-            <p>{{name}} - {{title}}</p>
-          </li>
-          {{/each}}
+      <div class="dropdown col-2">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <h6><b>Projects: </b></h6>
+        </button>
+        <ul class="dropdown-menu">
+          <div class="m-2">
+            {{#each projects}}
+            <p class="dropdown-item"><b>Name: </b>{{name}}</p>
+            <p class="dropdown-item"><b>Description: </b>{{description}}</p>
+            <p class="dropdown-item"><b>Status: </b>{{status}}</p>
+          </div>
         </ul>
       </div>
-    </div>
-  </div>
-  {{/each}}
-  {{/each}}
-  {{/each}}
-  {{/each}}
-  {{/each}}
-  {{/each}}
-</section>
-{{/with}}
+
+      <div class="dropdown col-2">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <h6><b>Teams: </b></h6>
+        </button>
+        <ul class="dropdown-menu">
+          <div class="m-2">
+            {{#each teams}}
+            <p><b>Team name: </b>{{team_name}}</p>
+            {{#with team_leader}}
+            <p><b>Name: </b>{{name}}</p>
+            <p><b>Title: </b>{{title}}</p>
+            <p><b>Email: </b>{{email}}</p>
+            {{/with}}
+          </div>
+        </ul>
+      </div>
+
+      <div class="dropdown col-2">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <h6><b>Team <br>members: </b></h6>
+        </button>
+        <ul class="dropdown-menu">
+          <div class="m-2">
+            {{#each team_members}}
+            <p><b>Name: </b>{{name}}</p>
+            <p><b>Title: </b>{{title}}</p>
+            <p><b>Email: </b>{{email}}</p>
+            <p><b>Skills: </b></p>
+            <ul>
+              {{#each skills}}
+              <li>
+                <p>{{this}}</p>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </ul>
+      </div>
+
+      <div class="dropdown col-2">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <h5><b>Projects: </b></h6>
+        </button>
+        <ul class="dropdown-menu">
+          <div class="m-2">
+            {{#each projects}}
+            <p><b>Name: </b>{{name}}</p>
+            <p><b>Description: </b>{{description}}</p>
+
+            <div>
+              <h4><b>Technologies: </b></h4>
+              <ul>
+                {{#each technologies}}
+                <li>
+                  <p>{{this}}</p>
+                </li>
+                {{/each}}
+              </ul>
+            </div>
+
+            <div>
+              <h4><b>Team members:</b></h4>
+              <ul>
+                {{#each team_members}}
+                <li>
+                  <p>{{name}} - {{title}}</p>
+                </li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </ul>
+      </div>
+      {{/each}}
+      {{/each}}
+      {{/each}}
+      {{/each}}
+      {{/each}}
+      {{/each}}
+    </section>
+  </section>
+  {{/with}}
+</main>

@@ -41,7 +41,12 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    firstname: 'Сергій',
+    lastname: 'Піскор',
+    project_type: 'Resume project',
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 

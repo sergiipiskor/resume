@@ -23,25 +23,43 @@
         <a href="/skills">Skills</a>
         <a href="/summary">Summary</a>
     </nav> --}}
+
+
+
+
     {{#with main}}
-    <main>
-        <section>
-            {{> title data=summary.title big=true}}
+    <main class="row">
+
+        <section class="col-6">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                {{> title data=summary.title big=true}}
+            </a>
             <div>
                 <p>
-                    {{summary.text}}
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        {{summary.text}}
+                    </div>
+                </div>
                 </p>
             </div>
         </section>
 
+
         {{#with experience}}
-        <section>
-            <div>
+        <section class="col-6">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
                 {{> title data=title big=false}}
-            </div>
+            </a>
             <div>
                 <p>
-                    {{text}}
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        {{text}}
+                    </div>
+                </div>
                 </p>
             </div>
         </section>
